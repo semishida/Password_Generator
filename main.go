@@ -25,3 +25,5 @@ func generatePassword(length int) (string, error) {
 	//код
 	return "", fmt.Errorf("Длина пароля должна быть больше чем 4 символа")
 }
+
+//
