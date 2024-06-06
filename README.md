@@ -1,4 +1,4 @@
-# Password Generator
+# Password Generator (аналог pwgen)
 
 Этот проект реализует генератор паролей на языке Go.
 
