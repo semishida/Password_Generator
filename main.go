@@ -25,16 +25,16 @@ func main() {
 
 func generatePassword(length int) (string, error) {
 	if length < 4 {
-		return "", fmt.Errorf("Длина пароля должна быть больше чем 4 символа!")
+		return "", fmt.Errorf("Длина пароля должна быть больше чем 4 символа")
 	}
 
-	//Создаем срез, содержащий все символы, из которых будет генерироваться пароль
+	// Создаем срез, содержащий все символы, из которых будет генерироваться пароль
 	allChars := lowercaseLetters + uppercaseLetters + digits + specialChars
 
-	//Создаем результируюзий срез, в который будем помещать символы пароля
+	// Создаем результирующий срез, в который будем помещать символы пароля
 	password := make([]byte, length)
 
-	//Выбираем по одному случайному символу из каждой категории и добавляем их в пароль
+	// Выбираем по одному случайному символу из каждой категории и добавляем их в пароль
 	for i := 0; i < length-3; i++ {
 		char, err := randChar(allChars)
 		if err != nil {
@@ -43,12 +43,12 @@ func generatePassword(length int) (string, error) {
 		password[i] = char
 	}
 
-	//Выбираем по одному случайному символу из каждой категории и добавляем их в пароль
+	// Выбираем по одному случайному символу из каждой категории и добавляем их в пароль
 	password[length-3], _ = randChar(lowercaseLetters)
 	password[length-2], _ = randChar(uppercaseLetters)
 	password[length-1], _ = randChar(digits)
 
-	//Перемешиваем символы пароля
+	// Перемешиваем символы пароля
 	shuffle(password)
 
 	return string(password), nil
