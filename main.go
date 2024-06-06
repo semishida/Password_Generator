@@ -25,7 +25,7 @@ func main() {
 
 func generatePassword(length int) (string, error) {
 	if length < 4 {
-		return "", fmt.Errorf("Длина пароля должна быть больше чем 4 символа")
+		return "", fmt.Errorf("Длина пароля должна быть больше чем 4 символа!")
 	}
 
 	//Создаем срез, содержащий все символы, из которых будет генерироваться пароль
